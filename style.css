@@ -1,55 +1,101 @@
-h1{
-    color : rgb(0, 170, 255);
-    text-align: center;
+/* ============================
+   RESET + FIX RESPONSIVE MOBILE
+============================ */
+* {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    padding: 10px;
+    max-width: 100%;
+    overflow-x: hidden; /* Ngăn tràn ngang gây lệch layout */
+    font-family: Arial, sans-serif;
+}
+
+/* H1 luôn căn giữa + tự co giãn theo màn hình */
+h1{
+    color: rgb(0, 170, 255);
+    text-align: center;
+    width: 100%;
+    font-size: clamp(26px, 7vw, 42px); /* Auto scale mobile → PC */
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* ============================
+   STYLE CŨ (GIỮ NGUYÊN)
+============================ */
+
 .tieude{
     color : red;
     font-size: 25px;
 }
+
 .suyra, .vd{
     color : rgb(255, 136, 0);
-    margin-left : -20px;
     font-size: 20px;
+    /* margin-left : -20px;  ← XÓA để không bị lệch mobile */
+    margin-left: 0;
 }
+
 li[href]{
     color : blue;
     font-size: 18px;
-    margin-left: -20px;
-    
+    /* margin-left: -20px; ← XÓA để không lệch */
+    margin-left: 0;
 }
-#href_mh, #target_mh{
-    display: block;
-    width : 621px;
-    height : 349px;
-    margin-left : -30px;
-    border: 2px solid rgb(0, 0, 0);
-}
-.title_mh{
-    display: block;
-    width : 621px;
-    height : 349px;
-    margin-left : -60px;
-    border: 2px solid rgb(0, 0, 0);
-}
+
 .li_target{
     color : green;
     font-size: 18px;
 }
+
 a[target="_blank"]{
     color : purple;
     font-size: 18px;
 }
+
 a[target="_self"]{
     color : goldenrod;
     font-size: 18px;
 }
+
 .tieude_mini{
     color : rgb(255, 0, 0);
     font-size: 25px;
-    margin-left: -10px;
+    /* margin-left: -10px; ← XÓA */
+    margin-left: 0;
 }
+
 .li_vd{
     color : black;
     font-size: 18px;
-    margin-left : -25px;
+    /* margin-left : -25px; ← XÓA */
+    margin-left: 0;
+}
+
+/* ============================
+   FIX ẢNH BỊ TRÀN MOBILE
+============================ */
+img {
+    max-width: 100%;   /* Thu ảnh lại vừa màn hình điện thoại */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border: 2px solid #000;
+}
+
+/* Gỡ width & height cố định để tránh tràn ngang */
+#href_mh, #target_mh, .title_mh {
+    width: 100%;   /* từ 621px → 100% màn hình */
+    height: auto;
+    margin-left: 0;
+}
+
+/* ============================
+   FIX LIST BỊ LỆCH QUÁ SÂU
+============================ */
+ul, ol {
+    padding-left: 20px;
 }
