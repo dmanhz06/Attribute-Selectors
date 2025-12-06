@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="./ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./ico/favicon-16x16.png">
+    <link rel="manifest" href="./ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="style.css">
+    <title>Attribute selectors</title>
+</head>
+<body>
+    <h1>Attribute Selectors</h1>
+    <ol>
+        <li class="tieude">href</li>
+        <ul>
+            <li href="">[href]: chọn tất cả các thẻ có thuộc tính href áp dụng vào css</li>
+            <li href="">a[href] : chọn tất cả các thẻ a có thuộc tính href áp dụng vào css</li>
+            <p class="suyra">=> chỉ áp dụng cho thẻ a, ko áp dụng cho các thẻ còn lại</p>
+            <img src="./img/minhhoa_href.jpg" alt="mh_href" id="href_mh">
+        </ul>
+        <br>
+        <li class="tieude">Target:</li>
+        <ul>
+            <li href="">target = "__blank" -> mở link sang tab mới</li>
+            <li href="">target ="__self"     -> mở link ngay tại trang</li>
+            <li href="">a[target ="__blank"] để chỉ tác động vào thẻ a có target="__blank"</li>
+            <br>
+            <img src="./img/minhhoa_target.jpg" alt="mh_target" id="target_mh">
+            <p class="vd"> Ví dụ minh họa: </p>
+            <ul>
+                <li class="li_target">Target_blank -> mở link sang trang mới</li>
+                <a href="https://www.youtube.com/watch?v=MuhPmG4963I&list=PLPt6-BtUI22oveeGAyckbAXRSmTBGLZP4&index=50" target="_blank">Bài giảng Attribute selectors</a>
+                <li class="li_target">Target_self -> mở link ngay tại trang</li>
+                <a href="https://www.facebook.com/duy.manh.581448" target="_self">Facebook admin</a>
+            </ul>
+        </ul>
+        <br>
+        <li class="tieude">Title:</li>
+        <ol>
+            <li class="tieude_mini">Title ~= "pic": </li>
+            <ul>
+                <li href="">title ~= "pic" : chọn tất cả các thuộc tính title =" " có chứa từ "pic" trong giá trị</li>
+                <li class="suyra"> => Note: chỉ đúng từ pic đơn lẻ not pic3 -> ko áp dụng</li>
+                <img src="./img/minhhoa_title.jpg" alt="mh_title" class="title_mh">
+            </ul>
+            <br>
+            <li class="tieude_mini">Title *= "pic" :</li>
+            <ul>
+                <li href="">title *= "pic" : chọn tất cả các thuộc tính title =" " có chứa chuỗi "pic" trong giá trị</li>
+                <li class="suyra"> => Note: đúng với cả từ pic, pic3, mypic,... miễn là có từ pic-> áp dụng</li>
+                <img src="./img/minhhoa_title_sao.jpg" alt="mh_title_sao" class="title_mh">
+            </ul>
+            <br>
+            <li class="tieude_mini">Title |= "pic" :</li>
+            <ul>
+                <li href="">title |= "pic" : chọn tất cả các thuộc tính title =" " có chứa ONLY từ "pic" hoặc bắt đầu bằng "pic-" trong giá trị</li>
+                <li class="suyra"> Ví dụ: </li>
+                <ul>
+                    <li class="li_vd">Các title hợp lệ : pic (only từ pic) , pic-123, pic-1,...</li>
+                    <li class="li_vd"> các title ko hợp lệ : pic so 2, pic_abc, chon pic, pic3,...</li>
+                </ul>
+                <img src="./img/minhhoa_title_gachdung.jpg" alt="mh_title_gachdung" class="title_mh">
+            </ul>
+            <br>
+            <li class="tieude_mini">Title ^= "pic" :</li>
+            <ul>
+                <li href="">title ^= "pic" : chọn tất cả các thuộc tính title =" " có giá trị bắt đầu bằng "pic" còn lại các từ đằng sau ko cần quan tâm</li>
+                <li class="suyra"> => miễn là có từ pic ở đầu là áp dụng</li>
+                <img src="./img/minhhoa_title_mu.jpg" alt="mh_title_mu" class="title_mh">
+            </ul>
+            </li>
+            <br>
+        <li class="tieude_mini">Title $= "1" :</li>
+        <ul>
+            <li href="">title $= "1" : chọn tất cả các thuộc tính title có giá trị kết thúc bằng "1" còn lại các từ đằng trước ko cần quan tâm</li>
+            <li class="suyra"> => Cứ miễn là kết thúc bằng 1 là áp dụng</li>
+            <li href="">&= " " có thể là một giá trị chữ hay số gì cũng được</li>
+            <br>
+            <img src="./img/minhhoa_title_dola.jpg " alt="mh_title_dola" class="title_mh">
+        </ul>
+
+        </ol>
+        
+    </ol>
+    
+    <br>
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+h1{
+    color : rgb(0, 170, 255);
+    text-align: center;
+}
+.tieude{
+    color : red;
+    font-size: 25px;
+}
+.suyra, .vd{
+    color : rgb(255, 136, 0);
+    margin-left : -20px;
+    font-size: 20px;
+}
+li[href]{
+    color : blue;
+    font-size: 18px;
+    margin-left: -20px;
+    
+}
+#href_mh, #target_mh{
+    display: block;
+    width : 621px;
+    height : 349px;
+    margin-left : -30px;
+    border: 2px solid rgb(0, 0, 0);
+}
+.title_mh{
+    display: block;
+    width : 621px;
+    height : 349px;
+    margin-left : -60px;
+    border: 2px solid rgb(0, 0, 0);
+}
+.li_target{
+    color : green;
+    font-size: 18px;
+}
+a[target="_blank"]{
+    color : purple;
+    font-size: 18px;
+}
+a[target="_self"]{
+    color : goldenrod;
+    font-size: 18px;
+}
+.tieude_mini{
+    color : rgb(255, 0, 0);
+    font-size: 25px;
+    margin-left: -10px;
+}
+.li_vd{
+    color : black;
+    font-size: 18px;
+    margin-left : -25px;
+}
