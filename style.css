@@ -29,69 +29,52 @@ h1{
 
 .tieude{
     color : red;
-    font-size: 25px;
+    font-size: 20;
 }
 
 .suyra, .vd{
     color : rgb(255, 136, 0);
-    font-size: 20px;
+    font-size: 16px;
     /* margin-left : -20px;  ← XÓA để không bị lệch mobile */
     margin-left: 0;
 }
 
 li[href]{
     color : blue;
-    font-size: 18px;
+    font-size: 16px;
     /* margin-left: -20px; ← XÓA để không lệch */
     margin-left: 0;
 }
 
 .li_target{
     color : green;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 a[target="_blank"]{
     color : purple;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 a[target="_self"]{
     color : goldenrod;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .tieude_mini{
     color : rgb(255, 0, 0);
-    font-size: 25px;
+    font-size: 20px;
     /* margin-left: -10px; ← XÓA */
     margin-left: 0;
 }
 
 .li_vd{
     color : black;
-    font-size: 18px;
-    /* margin-left : -25px; ← XÓA */
+    font-size: 16px;
+    /* margin-left : -20; ← XÓA */
     margin-left: 0;
 }
 
-/* ============================
-   FIX ẢNH BỊ TRÀN MOBILE
-============================ */
-img {
-    max-width: 100%;   /* Thu ảnh lại vừa màn hình điện thoại */
-    height: auto;
-    display: block;
-    margin: 10px auto;
-    border: 2px solid #000;
-}
-
-/* Gỡ width & height cố định để tránh tràn ngang */
-#href_mh, #target_mh, .title_mh {
-    width: 100%;   /* từ 621px → 100% màn hình */
-    height: auto;
-    margin-left: 0;
-}
 
 /* ============================
    FIX LIST BỊ LỆCH QUÁ SÂU
@@ -99,3 +82,33 @@ img {
 ul, ol {
     padding-left: 20px;
 }
+
+/* Ảnh mặc định cho laptop/PC */
+img {
+    width: 600px;          /* vừa phải, không quá to khi mở bằng laptop */
+    max-width: 100%;       /* thu nhỏ khi màn hình nhỏ hơn 600px */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border: 2px solid #000;
+}
+
+/* Các ảnh minh hoạ giữ nguyên style giống bạn */
+#href_mh, #target_mh, .title_mh {
+    width: 600px;          /* ảnh chuẩn trên laptop */
+    max-width: 100%;       /* co lại trên mobile */
+    height: auto;
+    margin-left: 0;
+}
+
+/* Responsive cho điện thoại (màn hình dưới 768px) */
+@media (max-width: 768px) {
+    img,
+    #href_mh,
+    #target_mh,
+    .title_mh {
+        width: 100%;        /* full width điện thoại */
+        height: auto;
+    }
+}
+
